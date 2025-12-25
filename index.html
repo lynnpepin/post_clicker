@@ -99,9 +99,8 @@
     display:flex;
     justify-content:flex-end; 
   }
+
   #post_send {
-    color: #fff;
-    background: linear-gradient(180deg, #08d, #06c);
     font-size: 1.5em;
     width: 3em;
     height: 1.5em;
@@ -119,10 +118,23 @@
         */
     cursor: pointer;
   }
-  #post_send:hover {
+  #post_send:not(:disabled){
+    color: #fff;
+    background: linear-gradient(180deg, #08d, #06c);
+  }
+  #post_send:disabled {
+    color: #bbb;
+    background: linear-gradient(180deg, #aaa, #999);
+    box-shadow:
+      inset 0px 1px 0px 1px #888,
+      inset 0px -1px 0px 1px #999,
+      0px 1px 0px 1px #f0f0ff,
+      0px -1px 0px 1px #ddf;
+  }
+  #post_send:not(:disabled):hover {
     background: linear-gradient(180deg, #0af, #06c);
   }
-  #post_send:active {
+  #post_send:not(:disabled):active {
     background: #06c;
   }
   #post_pie{
@@ -136,13 +148,12 @@
 
 </style>
 
-
 <div id="da_game">
 
   <div id="pane_stats">
     <button id="genius_button" onclick="click_genius()" >🧠</button>
     <br><br>
-    <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em">Genius</label>
+    <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;">Genius</label>
     <input type="number" id="genius_level" disabled></input>
     <hr>
   </div>
@@ -150,10 +161,10 @@
   <div id="pane_feed">
 
     <div id="post_box">
-      <input id="post_input" type="text" value="This is the text in the post box">
+      <input id="post_input" type="text" value="">
       <div id="post_box_bottom">
         <div id="post_pie"></div>
-        <button id="post_send">⌲</button>
+        <button disabled id="post_send" onclick="post_send()" >⌲</button>
       </div>
     </div>
 
@@ -169,23 +180,105 @@
 </div>
 
 
-
-
 <script>
+raw_posts = [
+  "First post",
+  "Second post",
+  "I am gay",
+  "That is cool",
+  "I love you",
+  "What an asshole",
+  "uwu"
+]
+target_post = raw_posts.shift();
+target_post_length = target_post.length;
+draft_post = "";
+
+function print_debug(header) {
+  console.log(header);
+  console.log(`
+  raw_posts: ${raw_posts.length} left;
+  target_post: ${target_post};
+  target_post_length: ${target_post_length};
+  draft_post: ${draft_post};
+  draft_post.length: ${draft_post.length};
+  `);
+  console.log(". . . . . . . . . . . . ");
+  console.log(`raw_posts: ${raw_posts}`);
+  console.log("========================");
+}
+
 function click_genius() {
-    var value = parseInt(document.getElementById('genius_level').value, 10);
+  var value = parseInt(document.getElementById('genius_level').value, 10);
+
+  if (value >= 10) {
+    // Try to type post
+    if (type_post()) {
+      // Post succesfully typed, reset genius level
+      value = 0
+    } else {
+      // Nah
+    }
+  } else {
+    // Increment value
     value = (isNaN(value) ? 0 : value) + 1;
-    document.getElementById('genius_level').value = value;
   }
 
+  // Set value
+  document.getElementById('genius_level').value = value;
 
-  function set_post_pie_percent(percent) {
-    post_pie = document.getElementById('post_pie');
-    degree = percent * 360.0 / 100 + 2;
-    color = (percent >= 100.0) ? "#2d4" : "#38d";
-    post_pie.style.backgroundImage =
-      `conic-gradient(${color} ${degree}deg, #0000 ${degree}deg 360deg)`;
+}
+
+function type_post() {
+  print_debug("type_post()");
+  if (target_post.length > 0) {
+    // Still have posts to make!
+    draft_post = draft_post + target_post.slice(0, 1);
+    target_post = target_post.slice(1); 
+
+    set_post_input(draft_post);
+
+    set_post_pie_percent(100 * (draft_post.length / target_post_length))
+    return true;
+  }
+  else {
+    // Can't type; post is ready to go
+    return false;
+  }
+}
+function set_post_input(value) {
+  document.getElementById('post_input').value = value;
+  if (draft_post.length == target_post_length) {
+    document.getElementById('post_send').disabled = false;
+  }
+}
+
+function post_send() {
+  if (draft_post.length == target_post_length) {
+    target_post = raw_posts.shift();
+    target_post_length = target_post.length;
+    draft_post = "";
+    set_post_pie_percent(0);
+    set_post_input("");
+    // Re-disable post
+    document.getElementById('post_send').disabled = true;
   }
 
-  set_post_pie_percent(90);
+  print_debug("post_send()");
+
+  // todo - populate new post
+
+}
+
+function set_post_pie_percent(percent) {
+  post_pie = document.getElementById('post_pie');
+  degree = percent * 360.0 / 100 + 2;
+  color = (percent >= 100.0) ? "#2d4" : "#38d";
+  othercolor = (percent >= 100.0) ? "#2d4" : "#0000";
+  post_pie.style.backgroundImage =
+    `conic-gradient(${color} ${degree}deg, ${othercolor} ${degree}deg 360deg)`;
+}
+
+set_post_pie_percent(0);
+
 </script>
