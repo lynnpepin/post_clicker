@@ -3,7 +3,7 @@
     margin: 40px auto;
     max-width: 650px;
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #222;
     text-shadow: 0px 1px #ddd, 0px -1px #bbb;
     background-color: #ccc;
@@ -14,37 +14,158 @@
     line-height: 1.2;
     text-shadow: 0px 2px #ddd, 0px -2px #bbb;
   }
+  #da_game {
+    width: 48em;
+  }
   #pane_stats {
     float:left;
-    width:128px;
+    width: 8em;
+    /*
+    column-width:128px;
     margin-right:8px;
     padding-right:8px;
     border-right: 2px groove; 
+    */
   }
   #pane_feed {
-    /*float:right*/
-    width:512px;
+
+    float:left;
+    width:32em;
+    /*
     margin-right:8px;
     padding-right:8px;
     margin-left:8px;
     padding-left:8px;
     border-right: 2px groove;
+    column-width: 512px;
+    */
   }
+  #genius_button {
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    box-shadow:
+      inset 0px 4px 0px 1px #eee,
+      inset 0px -4px 0px 1px #ccc,
+      0px 4px 0px 1px #aaa,
+      0px -4px 0px 1px #bbb;
+    font-size: 3em;
+    line-height: 2em; /* centers the emoji vertically */
+    text-align: center;
+    cursor: pointer;
+
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ccc, #eee);
+    /*
+    border: 4px inset rgba(0,0,0,0.45);
+    background: linear-gradient(180deg,#fff 0%,#e6e6e6 60%);
+    -webkit-appearance: none;
+    appearance: none;
+    */
+  }
+  #genius_button:hover {
+    background: linear-gradient(180deg, #c8c8c8, #e8e8e8);
+  }
+  #genius_button:active {
+    font-size: 4em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+  #genius_level {
+    width:4em;
+    border:none;
+    background-color: none;
+  }
+  #post_box {
+    width: auto;
+    background:#eee;
+    border-radius:.25em .25em 1.25em .25em;
+    padding:.4em;
+    margin:.25em;
+    border: inset 2px;
+    display: flex;
+    flex-direction: column;
+  }
+  #post_input {
+    width: 100%;
+    height:3rem;
+    border:none;
+    background:none;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color:#111;
+  }
+  #post_box_bottom {
+    /*
+    background: #f0f;
+    */
+    display:flex;
+    justify-content:flex-end; 
+  }
+  #post_send {
+    color: #fff;
+    background: linear-gradient(180deg, #08d, #06c);
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: .75em;
+    border: none;
+    border-radius: 50%;
+    box-shadow:
+      inset 0px 1px 0px 1px #06c,
+      inset 0px -1px 0px 1px #08d,
+      0px 1px 0px 1px #f0f0ff,
+      0px -1px 0px 1px #ddf;
+      /*
+        flex: bottom;
+        margin-left: 18.875em;
+        */
+  }
+  #post_send:hover {
+    background: linear-gradient(180deg, #0af, #06c);
+  }
+  #post_send:active {
+    background: #06c;
+  }
+
 </style>
 
+<script>
+function click_genius() {
+    var value = parseInt(document.getElementById('genius_level').value, 10);
+    value = (isNaN(value) ? 0 : value) + 1;
+    document.getElementById('genius_level').value = value;
+  }
+</script>
+
 <div id="da_game">
-  
+
   <div id="pane_stats">
-    <p>dril</p>
-    <button>🧠</button>
+    <button id="genius_button" onclick="click_genius()" >🧠</button>
+    <hr>
+    <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;">Genius</label>
+    <input type="number" id="genius_level" disabled></input>
+    <hr>
   </div>
 
   <div id="pane_feed">
-    <h1> Hella world </h1>
+
+    <div id="post_box">
+      <input id="post_input" type="text" value="This is the text in the post box" disabled>
+      <div id="post_box_bottom">
+        <button id="post_send">⌲</button>
+      </div>
+    </div>
 
     <hr>
 
-    <p> What is up my Ridiculous Bitches </p>
+    <div id="post_feed">
+    <p class="post"> What is up my Ridiculous Buddies? I can't have fun and I can't run; if you want to kiss me then we'll have some fun.</p> <p> What is up my Ridiculous Bitches </p>
+    <p class="post"> What is up my Ridiculous Buddies </p>
+    </div>
+
   </div>
 
 </div>
+
