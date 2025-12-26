@@ -1,17 +1,17 @@
 raw_posts = [
+  "ghosts r real",
+  "charging up my joe biden tulpa",
+  "dude. look how hard i can cry",
+  "I love you THIIIIIIIIIIIIS much!!! 🤏",
+  "have all those years of playing runescape paid off yet",
   "?",
   "ghosts are literally real",
   "piss",
-  "I love you THIIIIIIIIIIIIS much!!! 🤏",
-  "dude. look how hard i can cry",
-  "charging up my joe biden tulpa",
-  "have all those years of playing runescape paid off yet",
   "santa claus is a fascist",
   "posting is all i have in life",
   "'i hate the french', i say, whitely,",
-  "immortality rings stuck on penis help",
-  "piss",
   "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
+  "immortality rings stuck on penis help",
   "what kind of catheter does iron man use",
   "ex girlfriend charcuterie nightmare",
   "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
@@ -155,27 +155,23 @@ raw_posts = [
 target_post = raw_posts.shift();
 target_post_length = target_post.length;
 draft_post = "";
+
 genius_value = 0;
 genius_max = 1;
+
 ego_value = 0;
+
+followers = 0;
+world_population = 6967420621;
+
 posted_posts = [];
 
 last = performance.now();
 now = performance.now();
 delta = 0.125;
 
-genius_level_residual = 0.0;
 
 
-function update(dt) {
-  // dt in ms; around 125
-  // console.log(dt); very close to 125
-  //location.reload();
-
-  // Update genius by ego
-  delta_genius(ego_value * dt / 1000);
-
-}
 
 setInterval(
   () => {
@@ -184,7 +180,7 @@ setInterval(
     last = now;
     update(dt);
   },
-  125
+  60
 );
 
 
@@ -210,42 +206,12 @@ function click_genius() {
   delta_genius(1);
 }
 
-function delta_genius(by_value) {
-  if (genius_value >= genius_max) {
-    set_genius(genius_max);
-    // Try to type post
-    if (type_post()) {
-      // Post succesfully typed, reset genius level
-      set_genius(0);
-      update_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 10 ? 1 : 0));
-    } else {
-      // Genius value at max, can't post
-    }
-  } else {
-    // Increment value
-    set_genius(genius_value + by_value);
-  }
-
-}
-function set_genius(to_value) {
-  genius_value = to_value;
-  // Update genius value and progress bar
-  document.getElementById('genius_level').value = Math.floor(genius_value);
-  document.getElementById('genius_level_progress').value = Math.floor(genius_value);
-}
-
-
-function update_genius_max(new_max) {
-  genius_max = new_max;
-  document.getElementById('genius_level_progress').max = new_max;
-
-}
 
 /// Typing posts
 function type_post() {
   //print_debug("type_post()");
   if (target_post.length > 0) {
-    // Still have posts to make!
+    // Still have post to type!
     draft_post = draft_post + target_post.slice(0, 1);
     target_post = target_post.slice(1); 
 
@@ -256,6 +222,8 @@ function type_post() {
     // Hack to expand postbox as needed
     const ta = document.getElementById('post_input');
     ta.style.height = ta.scrollHeight + 'px';
+
+    set_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 100 ? 1 : 0));
     return true;
   }
   else {
@@ -299,7 +267,7 @@ function post_send() {
     // Re-set height
     const ta = document.getElementById('post_input');
     ta.style.height = 'auto';
-    update_genius_max( Math.floor(genius_max * 1.005) + (genius_max <= 200 ? 5 : 0) );
+    set_genius_max( Math.floor(genius_max * 1.001) + (genius_max <= 1000 ? 10 : 0) );
     
   }
 
@@ -322,14 +290,80 @@ function create_post(post_text) {
   posted_posts.push(new_post);
 }
 
-/// Ego
+/// Setters and Getters
 
+/// Genius
+function delta_genius(by_value) {
+  if (genius_value >= genius_max) {
+    set_genius(genius_max);
+    // Try to type post
+    if (type_post()) {
+      // Post succesfully typed, reset genius level
+      set_genius(0);
+    } else {
+      // Genius value at max, can't post
+    }
+  } else {
+    // Increment value
+    set_genius(genius_value + by_value);
+  }
+
+}
+function set_genius(to_value) {
+  genius_value = to_value;
+  // Update genius value and progress bar
+  document.getElementById('genius_level').value = Math.floor(genius_value);
+  document.getElementById('genius_level_progress').value = Math.floor(genius_value);
+}
+
+function set_genius_max(new_max) {
+  genius_max = new_max;
+  document.getElementById('genius_level_progress').max = new_max;
+}
+
+/// Ego
 function delta_ego(delta_ego) {
   set_ego(ego_value + delta_ego);
 }
 function set_ego(new_value) {
   ego_value = new_value;
-  document.getElementById('ego_level').value = new_value;
+  document.getElementById('ego_level').value = Math.floor(new_value);
+}
+
+/// Followers
+function delta_followers(delta) {
+  set_followers(followers + delta);
+}
+function set_followers(new_value) {
+  followers = new_value;
+  document.getElementById('follower_level').value = Math.floor(followers);
+
+}
+
+/// Population
+function delta_population(delta) {
+  set_population(world_population + delta);
+}
+function set_population(new_value) {
+  world_population = new_value;
+  document.getElementById('population_level').value = Math.floor(world_population);
+
 }
 
 set_post_pie_percent(0);
+
+/// Game dt loop
+function update(dt) {
+  // dt in ms; around 125
+  // console.log(dt); very close to 125
+  //location.reload();
+
+  // Update genius by ego
+  delta_genius(ego_value * dt / 1000);
+  
+  delta_followers(posted_posts.length * dt / 1000);
+
+  delta_ego(followers * dt / 1000_000);
+
+  delta_population( (Math.random() * 8 - 2) * dt / 1000);
+}
