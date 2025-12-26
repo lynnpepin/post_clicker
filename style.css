@@ -57,16 +57,20 @@ h1,h2,h3 {
   background: #eef8;
   text-shadow: 0px 0px 8px #80f;
 }
+#genius_level, #ego_level, #follower_level, #population_level {
+  border: inset 1px;
+  border-radius: 3px;
+  margin-right: 2em;
+  text-align: end;
+  background-color: #111;
+  font-family: monospace;
+  margin-left: .75em;
+}
+
 #genius_level {
   width:4.20em;
-  border: outset 1px;
-  border-radius:3px;
-  margin-right: 2em;
-  text-align: right;
   color: #1f3;
   text-shadow: 0px 0px 1px #0f04;
-  background-color: #132;
-  font-family: monospace;
 }
 #genius_level_progress {
   width: 8rem;
@@ -78,15 +82,8 @@ h1,h2,h3 {
 }
 #ego_level {
   width:6.9em;
-  border: outset 1px;
-  border-radius:3px;
-  margin-right: 2em;
-  text-align: end;
   color: #4ff;
   text-shadow: 0px 0px 1px #00f8;
-  background-color: #123;
-  font-family: monospace;
-  margin-left: .75em;
 }
 
 #followers_container {
@@ -96,16 +93,9 @@ h1,h2,h3 {
 }
 #follower_level {
   width:7.20em;
-  border: outset 1px;
-  border-radius:3px;
-  margin-right: 2em;
-  text-align: end;
   color: #f8f;
   text-shadow: 0px 0px 1px #8244;
-  background-color: #321;
-  font-family: monospace;
   letter-spacing:-0.1em;
-  margin-left: .75em;
 }
 
 
@@ -116,16 +106,9 @@ h1,h2,h3 {
 }
 #population_level {
   width:7.20em;
-  border: outset 1px;
-  border-radius:3px;
-  margin-right: 2em;
-  text-align: end;
   color: #f21;
   text-shadow: 0px 0px 1px #8004;
-  background-color: #311;
-  font-family: monospace;
   letter-spacing:-0.1em;
-  margin-left: .75em;
 }
 
 #pane_feed {
@@ -233,4 +216,23 @@ h1,h2,h3 {
   display:flex;
   justify-content:flex-end; 
 
+}
+
+
+.like_button, .repost_button{
+  border:none;
+  text-align: center;
+  cursor: pointer;
+  background-color: none;
+  background: none;
+  font-size: 1em;
+}
+.like_count, .repost_count {
+  border: none;
+  text-align: left;
+  width: 2em;
+  background: none;
+  font-size: .75em;
+  color: #aaa;
+  text-shadow: 0px 1px #fff, 0px -1px #ddd;
 }

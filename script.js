@@ -1,13 +1,14 @@
 raw_posts = [
-  "no",
-  "dude. look how hard i can cry",
+  "?",
+  "ghosts are literally real",
+  "piss",
   "I love you THIIIIIIIIIIIIS much!!! 🤏",
-  "have all those years of playing runescape paid off yet",
+  "dude. look how hard i can cry",
   "charging up my joe biden tulpa",
+  "have all those years of playing runescape paid off yet",
   "santa claus is a fascist",
   "posting is all i have in life",
   "'i hate the french', i say, whitely,",
-  "ghosts are literally real",
   "immortality rings stuck on penis help",
   "piss",
   "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
@@ -19,6 +20,7 @@ raw_posts = [
   "benjamin franklin would have loved \"MILF\"s as a concept. and also as a milfs",
   "'cool quartz necklace, what properties does it have?' well i purchased it because of the 'craigslist jackoff necklace guy' but the most magical thing about it is its abundance on earth and the piezoelectric effect making it a fantastic clock in electric circuits. but mostly the jacking off",
   "my wife and kids left me behind at applebees after i challengd the waiter to an arm wrestle and completely lost my shit. again",
+  "will you guys still love me if i make nice posts instead of gross posts",
   "i ll start voting once they make a presidential medal of gaming",
   "exciting new kickstarter combines the modularity of a sectional sofa with the utility of a toilet",
   "google search free minecraft boobies no viruses",
@@ -27,6 +29,7 @@ raw_posts = [
   "my (f21) boyfriend (m38)'s algorithm keeps showing him ai videos of a baby being ripped apart by pit bulls. god. i love him so much",
   "why are you all surprised that i am smart and well read? is it my illiteracy",
   "fetishizing korean men in a way that is a little feminist and very racist",
+  "behind every Foot is the venerable Toes.",
   "to all the bots telling me 'i need psychological help' and 'i am full of shit'.. you sound like my next ex wife. dm me",
   "making fun of kids is a human past time since time imemorial",
   "can anyone recommend a good anime? no",
@@ -45,20 +48,21 @@ raw_posts = [
   "you're a beautiful woman. you must be so good at videogames",
   "very disappointed by 'block chain'",
   "holiday was good. ate lots of cheese. grandma dead",
-  "with the seven gender emeralds in tow i finally defeated judith butler",
+  "judith butler: collect the seven gender emeralds",
   "i am successful and usually sort of moist",
   "i independently arrived to the same idea as Dr. Seuss' book 'The Pocket Book of Boners' bitch",
   "juice stand guy fucked the mango in front of me",
   "you let your toddler on the escalator all alone. but im the bad guy for going up the down escalator like a linebacker demolishing everything in my way?",
   "bog standard family structures don't stand a chance against wildly incestuous ones",
-  "centrist taking a side in the debate between 'wiping' and 'you dont need to wipe' positions",
-  "how i make my very good posts (CW: mental illness, suicidal ideation, drug abuse, sleep paralysis, dissociative disorder, software opinions, childhood sexual abuse)",
-  "say what you will about elon musk, he did the impossible: get dril to sign up for Threads as the only person posting at all",
+  "centrist taking a side in the debate between 'you need to wipe' and 'you dont need to'",
+  "how i make my very good posts (CW: mental illness, suicidal ideation, drug abuse, sleep paralysis, dissociative disorder, software opinions, childhood trauma)",
+  "say what you will about elon musk, he did the impossible: get dril to sign up for Threads",
+  "he's the only one posting on Threads. haha",
   "i only hate the French because it lets me practice hatred for ethnic minorities in a manner Woke and becoming of of my Brand",
   "babe. i'm as circumcised as they get",
-  "goethe shaking his fists and rolling in his grave as SJWs use green instead of yellow",
+  "goethe shaking his fists and rolling in his grave as SJWs decide not to use the Sonic the Hedgehog colors",
   "teacup? more like tea gallon. <-- british people probably",
-  "\"sexism is when girls can't play baseball\", i say, tears rolling down my eyes. my lovely wife is allowed, but so bad. \"but my lovely wife is good enough to make up for me\" says my lovely wife (who is bad at baseball). \"we are baseball lesbians\"",
+  "\"sexism is when girls can't play baseball\", i say, tears rolling down my eyes. my lovely wife is allowed, but so bad. she can't. \"but my lovely wife is good enough to make up for me\" says my lovely wife (who is bad at baseball). \"we are baseball lesbians\"",
   "i am sick and tired of seeing ryan reynolds. (i am roommates with ryan reynolds)",
   "tic tacs but instead of sugar it is salt",
   "jimmy neutron's full name: james 'isaac' 'boy genius' 'james' isaac biden",
@@ -69,9 +73,9 @@ raw_posts = [
   "straight pride flag two star review on amazon",
   "Triple chain gate. Ripple dome. Massive gear. Multi-step orb. Dynamic gear. Quad tower impact edge. These are the tools of jacking off",
   "nothing is cringe except for 'based', which is cringe, and nothing is based except for 'cringe', which is based",
-  "i am so happy i was so wrong <-- i am the bitch of prophecy",
+  "i am so happy i was so wrong <-- rotting bastard of prophecy",
   "do you know the muffin man? *shakes you by your collar* where is the fucking muffin man *screams*",
-  "Self Suck your Way to 100% Success and 0% Maxed Out Credit Cards",
+  "Self Suck your Way to Success",
   "Mars candy corporation clarifies 'Three Musketeers' not a reference to the 1844 French Historical novel. they're a firing squad who executed an innocent man",
   "ok computer. generate ursula k leguin short story about femboys. 8000 words. hugo finalist 2039. new york times best seller. erotic thriller.",
   "playing a sick guitar solo on the fron lawn with fireworks and everything. my children hate me and my wife is leaving me",
@@ -82,8 +86,10 @@ raw_posts = [
   "'woah im tired' said yaoi bara swordsman number 1. 'let's have a snack and stop fighting'",
   "I've come to the realization that being silly is low effort. There are numerous ways to be silly, but only one way to be serious. For that reason, I will not be being silly any more. Please respect my decision at this time",
   "microsoft teams is such Dogshit cratering my Productivity that it is given the Anticapitalist Award of the Decade",
+  "hey babe, are you my taxes? because i want to do you without a condom",
   "feeling bad about the current joe biden stuff",
   "choose ur gender: *one of two identical skeletons*",
+  "to whoever said i wouldn't make it: look at my follower count. you were right",
   "you can :3 if you want to. you can leave your :o behind. cause your friends don't ',;) and if they don't ,';) then they're no friends of mine",
   "taking the world by storm: coffee enemas",
   "i'm not just 'good at posting'. babe. im the 'postmaster general'",
@@ -96,6 +102,7 @@ raw_posts = [
   "Biden Claimed His Uncle Was Eaten by Cannibals. Military Records Say Otherwise",
   "congratulations to the \"death to america\" crowd for winning the war on america",
   "times are so tight that i am now only tipping 15% to my landlord",
+  "i like my women like i like my coffee. i like coffee",
   "my religious beliefs is. that the halo games are real and going to happen",
   "pokemon go. pokemon sleep. pokemon smile. you sultry bitches thought i'd say pokemon piss, cum, shit? what about pokemon sob. pokemon bleed. what about that",
   "\"try not to cum challenge\". buddy. that's not a challenge. that's the story of my life",
@@ -144,21 +151,30 @@ raw_posts = [
   "trust fund leftist. 'not in my back yard!!' he says. this is the thirteenth time this week i have broken in to use his parents trampoline",
   "is my life forfeit",
 ]
+
 target_post = raw_posts.shift();
 target_post_length = target_post.length;
 draft_post = "";
+genius_value = 0;
 genius_max = 1;
+ego_value = 0;
 posted_posts = [];
 
 last = performance.now();
 now = performance.now();
 delta = 0.125;
 
+genius_level_residual = 0.0;
+
 
 function update(dt) {
   // dt in ms; around 125
   // console.log(dt); very close to 125
   //location.reload();
+
+  // Update genius by ego
+  delta_genius(ego_value * dt / 1000);
+
 }
 
 setInterval(
@@ -168,7 +184,8 @@ setInterval(
     last = now;
     update(dt);
   },
-  125); // about every 125ms
+  125
+);
 
 
 function print_debug(header) {
@@ -190,30 +207,33 @@ function decimal_from_id(id) {
 
 //// Genius button
 function click_genius() {
-  var value = decimal_from_id('genius_level');
+  delta_genius(1);
+}
 
-  if (value >= genius_max) {
+function delta_genius(by_value) {
+  if (genius_value >= genius_max) {
+    set_genius(genius_max);
     // Try to type post
     if (type_post()) {
       // Post succesfully typed, reset genius level
-      value = 0
+      set_genius(0);
       update_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 10 ? 1 : 0));
     } else {
-      // Nah
+      // Genius value at max, can't post
     }
   } else {
     // Increment value
-    value = (isNaN(value) ? 0 : value) + 1;
+    set_genius(genius_value + by_value);
   }
 
-  // Set value
-  document.getElementById('genius_level').value = value;
-
-  // Update CSS of genius bar
-  document.getElementById('genius_level_progress').value = value;
-  document.getElementById('genius_level_progress').max = genius_max;
-
 }
+function set_genius(to_value) {
+  genius_value = to_value;
+  // Update genius value and progress bar
+  document.getElementById('genius_level').value = Math.floor(genius_value);
+  document.getElementById('genius_level_progress').value = Math.floor(genius_value);
+}
+
 
 function update_genius_max(new_max) {
   genius_max = new_max;
@@ -266,7 +286,7 @@ function post_send() {
     // Create the post!
     create_post(draft_post);
     // Update ego
-    change_ego(1);
+    delta_ego(1);
 
     // Reset the type box
     target_post = raw_posts.shift();
@@ -304,8 +324,12 @@ function create_post(post_text) {
 
 /// Ego
 
-function change_ego(delta_ego) {
-  document.getElementById('ego_level').value = decimal_from_id('ego_level') + delta_ego;
+function delta_ego(delta_ego) {
+  set_ego(ego_value + delta_ego);
+}
+function set_ego(new_value) {
+  ego_value = new_value;
+  document.getElementById('ego_level').value = new_value;
 }
 
 set_post_pie_percent(0);
