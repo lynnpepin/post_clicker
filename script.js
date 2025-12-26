@@ -1,5 +1,13 @@
 raw_posts = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
   "hey",
+  "i'm gay",
   "dude. look how hard i can cry",
   "?",
   "charging up my joe biden tulpa",
@@ -435,12 +443,17 @@ function update(dt) {
     // Asymptote toward followers, faster by num reposts
     delta_likes(
       ii,
-      Math.random() * (followers - get_likes(ii)) * Math.min(get_reposts(ii) * followers + 1 , 2**40)/ 2**40
+      Math.random() * Math.min(get_reposts(ii) * followers * 2**(-32), 1.0) // rate, slow
+      * get_likes(ii) * (1 - get_likes(ii) / (followers + 1)) // // logistic equation
+      * dt / 1000
+      + dt / 1000_000
     )
     // Asymptote toward population, faster by num reposts
     delta_reposts(
       ii,
-        Math.random() * (world_population - get_reposts(ii)) * Math.min(get_reposts(ii) * followers + 1, 2**40) / 2**40
+      Math.random() * (followers/world_population) * 2**(-32)// rate, slow
+      * get_reposts(ii) * (1 - get_reposts(ii)/world_population) // logistic equation
+      * dt / 1000
     )
 
     
@@ -459,7 +472,8 @@ function update(dt) {
   
   // Increase followers: df/dt (total likes, reposts) toward population
   delta_followers(
-      Math.random() * (world_population - followers) * (sum_likes / 2**8) * (sum_reposts * 2**8) / 2**24
+    Math.random() * Math.min(2**(-24) * sum_reposts * sum_likes * posted_posts.length, 1.0) // rate
+    * followers * (1 - followers / world_population)// logistic equation
     * dt / 1000
   )
 
@@ -467,6 +481,13 @@ function update(dt) {
   if (followers <= 67) {
     if (posted_posts.length >= 6) {
       delta_followers(Math.random() * dt * posted_posts.length / 100_000);
+    }
+  }
+  if (posted_posts.length < 20) {
+    if (Math.random() < (dt * followers / 10_000)) {
+      var ii = Math.floor(Math.random() * posted_posts.length);
+      delta_reposts(ii, 1);
+      delta_likes(ii, 1);
     }
   }
 
