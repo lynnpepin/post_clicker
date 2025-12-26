@@ -1,11 +1,10 @@
 raw_posts = [
   "hey",
-  "ghosts r real",
   "dude. look how hard i can cry",
   "?",
   "charging up my joe biden tulpa",
-  "I love you THIIIIS much! 🤏",
   "piss",
+  "I love you THIIIIS much! 🤏",
   "have all those years of playing runescape paid off yet",
   "ghosts are literally real",
   "posting is all i have in life",
@@ -17,7 +16,7 @@ raw_posts = [
   "immortality rings stuck on penis help",
   "ex girlfriend charcuterie nightmare",
   "what kind of catheter does iron man use",
-  "'cool quartz necklace, what does it do?' well i bought it per the 'craigslist jackoff crystal guy' but the most magical thing about quartz is its abundance on earth and the piezoelectric effect giving it fantastic electric circuit clock properties. but mostly the jacking off",
+  "'cool quartz necklace, what is it for?' well, i bought it per the 'craigslist jackoff crystal guy', but a magical thing about quartz is its abundance and the piezoelectric effect giving it fantastic clock properties for  electric circuits. but mostly the jacking off",
   "rejected with consolation 'plenty of fish in the sea'. dodged a bullet. you can't date fish idiot. maybe a dolphin? but even then its tenuous",
   "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
   "my wife and kids left me behind at applebees after i challengd the waiter to an arm wrestle and completely lost my shit. again",
@@ -163,10 +162,14 @@ genius_per_click = 1;
 
 ego_value = 0;
 
-followers = 0;
+followers = 0.01;
 world_population = 6967420621;
 
 posted_posts = [];
+posted_posts_likes = [];
+posted_posts_reposts = [];
+sum_likes = 0;
+sum_reposts = 0;
 
 last = performance.now();
 now = performance.now();
@@ -301,6 +304,8 @@ function create_post(post_text) {
 
   // Also add it to my posted_posts
   posted_posts.push(new_post);
+  posted_posts_likes.push(0);
+  posted_posts_reposts.push(0);
 
   // More genius per click
   delta_genius_per_click(1);
@@ -375,6 +380,48 @@ function set_population(new_value) {
 
 }
 
+/// Likes and reposts
+
+function get_post(ii) {
+  return document.getElementById("post_feed").querySelectorAll(".post_container")[posted_posts.length - ii - 1];
+}
+
+function get_likes(ii) {
+  return posted_posts_likes[ii];
+}
+function set_likes(ii, value) {
+  var old_value = posted_posts_likes[ii];
+  posted_posts_likes[ii] = value;
+  get_post(ii).querySelector(".like_count").value = Math.floor(value);
+  // maintain tally
+  sum_likes += (value - old_value);
+  delta_ego(value - old_value);
+}
+function delta_likes(ii, delta) {
+  posted_posts_likes[ii] += delta;
+  get_post(ii).querySelector(".like_count").value = Math.floor(posted_posts_likes[ii]);
+  // maintain tally
+  sum_likes += delta;
+  delta_ego(delta);
+}
+function get_reposts(ii) {
+  return posted_posts_reposts[ii];
+}
+function set_reposts(ii, value) {
+  posted_posts_reposts[ii] = value;
+  get_post(ii).querySelector(".repost_count").value = Math.floor(value);
+  // maintain tally
+  sum_reposts += (value - old_value);
+  delta_ego(value - old_value);
+}
+function delta_reposts(ii, delta) {
+  posted_posts_reposts[ii] += delta;
+  get_post(ii).querySelector(".repost_count").value = Math.floor(posted_posts_reposts[ii]);
+  // maintain tally
+  sum_reposts += delta;
+  delta_ego(delta);
+}
+
 set_post_pie_percent(0);
 
 /// Game dt loop
@@ -383,22 +430,45 @@ function update(dt) {
   // console.log(dt); very close to 125
   //location.reload();
 
+  // Increase likes and reposts
+  for (var ii = 0; ii < posted_posts.length ; ii ++) {
+    // Asymptote toward followers, faster by num reposts
+    delta_likes(
+      ii,
+      Math.random() * (followers - get_likes(ii)) * Math.min(get_reposts(ii) * followers + 1 , 2**40)/ 2**40
+    )
+    // Asymptote toward population, faster by num reposts
+    delta_reposts(
+      ii,
+        Math.random() * (world_population - get_reposts(ii)) * Math.min(get_reposts(ii) * followers + 1, 2**40) / 2**40
+    )
+
+    
+  }
+
   // Increase genius by ego
   delta_genius(
     ego_value * dt / 1000
   );
 
 
-  // Increase as function of current followers
+  // Increase ego as function of current followers
   delta_ego(
     followers * dt / 1000_000
   );
   
-  // Increase followers: df/dt (total likes, reblogs) toward population
+  // Increase followers: df/dt (total likes, reposts) toward population
   delta_followers(
-    (world_population - followers) * posted_posts.length / 2**36
+      Math.random() * (world_population - followers) * (sum_likes / 2**8) * (sum_reposts * 2**8) / 2**24
     * dt / 1000
   )
+
+  // Early game boost
+  if (followers <= 67) {
+    if (posted_posts.length >= 6) {
+      delta_followers(Math.random() * dt * posted_posts.length / 100_000);
+    }
+  }
 
   delta_population((Math.random() * 16 - 2) * dt / 1000);
 
@@ -407,3 +477,4 @@ function update(dt) {
 }
 
 set_genius_per_click(1);
+

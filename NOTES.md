@@ -10,3 +10,10 @@ MDN CSS references
 Ideas:
 
 - [ ] Sinusodal hum sounds. Volume increases toward 1 as you click, otherwise asymptotes toward 0 when you let go.
+
+Still need to implement:
+
+- [ ] Saving
+- [ ] Loading
+- [ ] Likes and reposts
+- [ ] 

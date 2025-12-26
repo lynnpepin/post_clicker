@@ -236,7 +236,7 @@ h1,h2,h3 {
 .like_count, .repost_count {
   border: none;
   text-align: left;
-  width: 2em;
+  width: 4em;
   background: none;
   font-size: .75em;
   color: #aaa;
