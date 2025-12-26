@@ -1,24 +1,25 @@
 raw_posts = [
+  "hey",
   "ghosts r real",
-  "charging up my joe biden tulpa",
   "dude. look how hard i can cry",
-  "I love you THIIIIIIIIIIIIS much!!! 🤏",
-  "have all those years of playing runescape paid off yet",
   "?",
-  "ghosts are literally real",
+  "charging up my joe biden tulpa",
+  "I love you THIIIIS much! 🤏",
   "piss",
-  "santa claus is a fascist",
+  "have all those years of playing runescape paid off yet",
+  "ghosts are literally real",
   "posting is all i have in life",
+  "you gotta hand it to chasers,",
+  "benjamin franklin would have loved \"MILF\"s as a concept. and also as a milfs",
+  "santa claus is a fascist",
   "'i hate the french', i say, whitely,",
   "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
   "immortality rings stuck on penis help",
-  "what kind of catheter does iron man use",
   "ex girlfriend charcuterie nightmare",
-  "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
+  "what kind of catheter does iron man use",
+  "'cool quartz necklace, what does it do?' well i bought it per the 'craigslist jackoff crystal guy' but the most magical thing about quartz is its abundance on earth and the piezoelectric effect giving it fantastic electric circuit clock properties. but mostly the jacking off",
   "rejected with consolation 'plenty of fish in the sea'. dodged a bullet. you can't date fish idiot. maybe a dolphin? but even then its tenuous",
-  "you gotta hand it to chasers,",
-  "benjamin franklin would have loved \"MILF\"s as a concept. and also as a milfs",
-  "'cool quartz necklace, what properties does it have?' well i purchased it because of the 'craigslist jackoff necklace guy' but the most magical thing about it is its abundance on earth and the piezoelectric effect making it a fantastic clock in electric circuits. but mostly the jacking off",
+  "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
   "my wife and kids left me behind at applebees after i challengd the waiter to an arm wrestle and completely lost my shit. again",
   "will you guys still love me if i make nice posts instead of gross posts",
   "i ll start voting once they make a presidential medal of gaming",
@@ -158,6 +159,7 @@ draft_post = "";
 
 genius_value = 0;
 genius_max = 1;
+genius_per_click = 1;
 
 ego_value = 0;
 
@@ -180,7 +182,7 @@ setInterval(
     last = now;
     update(dt);
   },
-  60
+  30
 );
 
 
@@ -203,7 +205,7 @@ function decimal_from_id(id) {
 
 //// Genius button
 function click_genius() {
-  delta_genius(1);
+  delta_genius(genius_per_click);
 }
 
 
@@ -211,6 +213,7 @@ function click_genius() {
 function type_post() {
   //print_debug("type_post()");
   if (target_post.length > 0) {
+    document.getElementById("post_box").style.opacity = "1";
     // Still have post to type!
     draft_post = draft_post + target_post.slice(0, 1);
     target_post = target_post.slice(1); 
@@ -223,7 +226,7 @@ function type_post() {
     const ta = document.getElementById('post_input');
     ta.style.height = ta.scrollHeight + 'px';
 
-    set_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 100 ? 1 : 0));
+    set_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 10 ? 1 : 0));
     return true;
   }
   else {
@@ -267,8 +270,18 @@ function post_send() {
     // Re-set height
     const ta = document.getElementById('post_input');
     ta.style.height = 'auto';
-    set_genius_max( Math.floor(genius_max * 1.001) + (genius_max <= 1000 ? 10 : 0) );
+    set_genius_max( Math.floor(genius_max * 1.001) + (genius_max <= 1000 ? 5 : 0) );
     
+    // Slowly reveal elements
+    if (posted_posts.length == 4) {
+      document.getElementById("followers_container").style.opacity = "1";
+    }
+    if (posted_posts.length == 2) {
+      document.getElementById("ego_container").style.opacity = "1";
+    }
+    if (posted_posts.length == 16) {
+      document.getElementById("population_container").style.opacity = "1";
+    }
   }
 
   //print_debug("post_send()");
@@ -288,6 +301,9 @@ function create_post(post_text) {
 
   // Also add it to my posted_posts
   posted_posts.push(new_post);
+
+  // More genius per click
+  delta_genius_per_click(1);
 }
 
 /// Setters and Getters
@@ -319,6 +335,15 @@ function set_genius(to_value) {
 function set_genius_max(new_max) {
   genius_max = new_max;
   document.getElementById('genius_level_progress').max = new_max;
+}
+
+function delta_genius_per_click(dgpc) {
+  set_genius_per_click(genius_per_click + dgpc);
+}
+
+function set_genius_per_click(gpc) {
+  genius_per_click = gpc;
+  document.getElementById('genius_per_click').textContent = Math.floor(gpc);
 }
 
 /// Ego
@@ -358,12 +383,27 @@ function update(dt) {
   // console.log(dt); very close to 125
   //location.reload();
 
-  // Update genius by ego
-  delta_genius(ego_value * dt / 1000);
+  // Increase genius by ego
+  delta_genius(
+    ego_value * dt / 1000
+  );
+
+
+  // Increase as function of current followers
+  delta_ego(
+    followers * dt / 1000_000
+  );
   
-  delta_followers(posted_posts.length * dt / 1000);
+  // Increase followers: df/dt (total likes, reblogs) toward population
+  delta_followers(
+    (world_population - followers) * posted_posts.length / 2**36
+    * dt / 1000
+  )
 
-  delta_ego(followers * dt / 1000_000);
+  delta_population((Math.random() * 16 - 2) * dt / 1000);
 
-  delta_population( (Math.random() * 8 - 2) * dt / 1000);
+  // posts accumulate likes asymptoting toward followers as function of reblogs, followers + random
+  // posts accumulate reblogs asymptoting toward population as function of likes, population + randomly
 }
+
+set_genius_per_click(1);

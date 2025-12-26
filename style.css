@@ -54,8 +54,11 @@ h1,h2,h3 {
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
-  background: #eef8;
-  text-shadow: 0px 0px 8px #80f;
+  text-shadow: 1px 1px 4px #3214;
+  box-shadow:
+    0px 4px 0px 1px #aaa,
+    0px -4px 0px 1px #bbb;
+  background: linear-gradient(180deg, #bbb, #ddd);
 }
 #genius_level, #ego_level, #follower_level, #population_level {
   border: inset 1px;
@@ -154,6 +157,9 @@ h1,h2,h3 {
   line-height: .75em;
   border: none;
   border-radius: .25em .25em .75em .25em;
+  text-shadow:
+    0px -1px #0044,
+    0px 1px #ddf4;
   box-shadow:
     inset 0px 1px 0px 1px #06c,
     inset 0px -1px 0px 1px #08d,

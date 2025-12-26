@@ -3,7 +3,8 @@
 <div id="da_game">
 
   <div id="pane_stats">
-    <button id="genius_button" onclick="click_genius()" >🧠</button>
+    <button id="genius_button" onclick="click_genius()" >🧠</button><br>
+    <label id="genius_per_click" style="float:end;color:#999;">1</label>
     <br><br>
     <div id="genius_container">
       <div id="genius_row">
@@ -14,7 +15,7 @@
     </div>
 
     <br>
-    <div id="ego_container" > 
+    <div id="ego_container" style="opacity:0"> 
       <div class="row" style="flex-direction:row">
         <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;color:#777;">Ego</label>
         <label style="font-size:.7em;letter-spacing:-0.05rem;font-weight:600;margin-left:.5em;color:#999;">(genius / sec)</label>
@@ -22,12 +23,12 @@
       <input type="number" id="ego_level" disabled value="0"></input>
     </div>
     <br>
-    <div id="followers_container">
+    <div id="followers_container" style="opacity:0">
       <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;color:#777;">Followers</label>
       <input type="number" id="follower_level" disabled value="0"></input>
     </div>
     <hr>
-    <div id="population_container">
+    <div id="population_container" style="opacity:0">
       <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;color:#777;">World Population</label>
       <input type="number" id="population_level" disabled value="6967420621"></input>
     </div>
@@ -35,7 +36,7 @@
 
   <div id="pane_feed">
 
-    <div id="post_box">
+    <div id="post_box" style="opacity:0">
       <textarea id="post_input" type="text" value=""  disabled>
       </textarea>
       <div id="post_box_bottom">
