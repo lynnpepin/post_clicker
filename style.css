@@ -1,0 +1,169 @@
+
+body {
+  margin: 40px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #222;
+  text-shadow: 0px 1px #ddd, 0px -1px #bbb;
+  background-color: #ccc;
+  padding: 0 10px;
+}
+
+
+h1,h2,h3 {
+  line-height: 1.2;
+  text-shadow: 0px 2px #ddd, 0px -2px #bbb;
+}
+#da_game {
+  width: 48em;
+}
+#pane_stats {
+  float:left;
+  width: 8em;
+  flex-direction: column;
+}
+#genius_button {
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  box-shadow:
+    inset 0px 4px 0px 1px #eee,
+    inset 0px -4px 0px 1px #ccc,
+    0px 4px 0px 1px #aaa,
+    0px -4px 0px 1px #bbb;
+  font-size: 3em;
+  line-height: 2em; /* centers the emoji vertically */
+  text-align: center;
+  cursor: pointer;
+
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ccc, #eee);
+}
+#genius_button:hover {
+  background: linear-gradient(180deg, #c8c8c8, #e8e8e8);
+}
+#genius_button:active {
+  font-size: 4em;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  background: #eef8;
+  text-shadow: 0px 0px 8px #80f;
+}
+#genius_level {
+  width:4em;
+  border: outset 1px;
+  background-color: linear-gradient(180deg, #06c, #09c);
+  border-radius:3px;
+}
+#genius_level_progress {
+  width: 8rem;
+}
+
+#pane_feed {
+  float:left;
+  width:32em;
+  flex-direction: column;
+  margin: .5em;
+  padding: .5em;
+}
+#post_box {
+  width: auto;
+  background:#eee;
+  border-radius:.25em .25em 1.25em .25em;
+  padding:.4em;
+  margin:.25em;
+  border: inset 2px;
+  display: flex;
+  flex-direction: column;
+  resize:none;
+  overflow:hidden;
+  height:auto;
+}
+#post_input {
+  width: 100%;
+  max-height:60em;
+  border:none;
+  background:none;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color:#111;
+}
+#post_box_bottom {
+  background: linear-gradient(180deg, #0000, #aaf1);
+  border-radius: 1em;
+  display:flex;
+  justify-content:flex-end; 
+}
+
+#post_send {
+  font-size: 1.5em;
+  width: 3em;
+  height: 1.5em;
+  line-height: .75em;
+  border: none;
+  border-radius: .25em .25em .75em .25em;
+  box-shadow:
+    inset 0px 1px 0px 1px #06c,
+    inset 0px -1px 0px 1px #08d,
+    0px 1px 0px 1px #f0f0ff,
+    0px -1px 0px 1px #ddf;
+    /*
+      flex: bottom;
+      margin-left: 18.875em;
+      */
+  cursor: pointer;
+}
+#post_send:not(:disabled){
+  color: #fff;
+  background: linear-gradient(180deg, #08d, #06c);
+}
+#post_send:disabled {
+  color: #bbb;
+  background: linear-gradient(180deg, #aaa, #999);
+  box-shadow:
+    inset 0px 1px 0px 1px #888,
+    inset 0px -1px 0px 1px #999,
+    0px 1px 0px 1px #f0f0ff,
+    0px -1px 0px 1px #ddf;
+}
+#post_send:not(:disabled):hover {
+  background: linear-gradient(180deg, #0af, #06c);
+}
+#post_send:not(:disabled):active {
+  background: #06c;
+}
+#post_pie{
+  width:1.5em;
+  height:1.5em;
+  background-image: conic-gradient(#0cf 20deg, #0000  0deg 360deg);
+  border-radius: 50%;
+  margin: .25em;
+  margin-right: 1em;
+}
+
+.post_text{
+  margin: 0em 0.25em 0em 0.25em;
+  padding: 0em 0.25em 0em 0.25em;
+  color: #333;
+  text-shadow: 0px 1px #fff, 0px -1px #eee;
+}
+
+.post_container{
+  margin: 1em 0.25em 0em 2.5em;
+  padding: 0em 0.25em 0em 0.25em;
+  background: #e8e8e8;
+  border-radius: .25em;
+  display: flex;
+  flex-direction: column;
+  border: inset;
+}
+
+.post_container_bottom{
+  background: linear-gradient(180deg, #0000, #aaf1);
+  border-radius: 1em;
+  display:flex;
+  justify-content:flex-end; 
+
+}

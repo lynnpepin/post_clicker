@@ -1,152 +1,4 @@
-<style type="text/css">
-  body {
-    margin: 40px auto;
-    max-width: 650px;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #222;
-    text-shadow: 0px 1px #ddd, 0px -1px #bbb;
-    background-color: #ccc;
-    padding: 0 10px
-  }
-
-  h1,h2,h3 {
-    line-height: 1.2;
-    text-shadow: 0px 2px #ddd, 0px -2px #bbb;
-  }
-  #da_game {
-    width: 48em;
-  }
-  #pane_stats {
-    float:left;
-    width: 8em;
-    /*
-    column-width:128px;
-    margin-right:8px;
-    padding-right:8px;
-    border-right: 2px groove; 
-    */
-  }
-  #genius_button {
-    width: 2em;
-    height: 2em;
-    padding: 0;
-    box-shadow:
-      inset 0px 4px 0px 1px #eee,
-      inset 0px -4px 0px 1px #ccc,
-      0px 4px 0px 1px #aaa,
-      0px -4px 0px 1px #bbb;
-    font-size: 3em;
-    line-height: 2em; /* centers the emoji vertically */
-    text-align: center;
-    cursor: pointer;
-
-    border-radius: 50%;
-    background: linear-gradient(180deg, #ccc, #eee);
-    /*
-    border: 4px inset rgba(0,0,0,0.45);
-    background: linear-gradient(180deg,#fff 0%,#e6e6e6 60%);
-    -webkit-appearance: none;
-    appearance: none;
-    */
-  }
-  #genius_button:hover {
-    background: linear-gradient(180deg, #c8c8c8, #e8e8e8);
-  }
-  #genius_button:active {
-    font-size: 4em;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
-    background: #eef8;
-    text-shadow: 0px 0px 8px #80f;
-  }
-  #genius_level {
-    width:4em;
-    border:none;
-    background-color: none;
-  }
-
-  #pane_feed {
-    float:left;
-    width:32em;
-    flex-direction: column;
-    margin: .5em;
-    padding: .5em;
-  }
-  #post_box {
-    width: auto;
-    background:#eee;
-    border-radius:.25em .25em 1.25em .25em;
-    padding:.4em;
-    margin:.25em;
-    border: inset 2px;
-    display: flex;
-    flex-direction: column;
-  }
-  #post_input {
-    width: 100%;
-    height:3rem;
-    border:none;
-    background:none;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color:#111;
-  }
-  #post_box_bottom {
-    background: linear-gradient(180deg, #0000, #aaf1);
-    border-radius: 1em;
-    display:flex;
-    justify-content:flex-end; 
-  }
-
-  #post_send {
-    font-size: 1.5em;
-    width: 3em;
-    height: 1.5em;
-    line-height: .75em;
-    border: none;
-    border-radius: .25em .25em .75em .25em;
-    box-shadow:
-      inset 0px 1px 0px 1px #06c,
-      inset 0px -1px 0px 1px #08d,
-      0px 1px 0px 1px #f0f0ff,
-      0px -1px 0px 1px #ddf;
-      /*
-        flex: bottom;
-        margin-left: 18.875em;
-        */
-    cursor: pointer;
-  }
-  #post_send:not(:disabled){
-    color: #fff;
-    background: linear-gradient(180deg, #08d, #06c);
-  }
-  #post_send:disabled {
-    color: #bbb;
-    background: linear-gradient(180deg, #aaa, #999);
-    box-shadow:
-      inset 0px 1px 0px 1px #888,
-      inset 0px -1px 0px 1px #999,
-      0px 1px 0px 1px #f0f0ff,
-      0px -1px 0px 1px #ddf;
-  }
-  #post_send:not(:disabled):hover {
-    background: linear-gradient(180deg, #0af, #06c);
-  }
-  #post_send:not(:disabled):active {
-    background: #06c;
-  }
-  #post_pie{
-    width:1.5em;
-    height:1.5em;
-    background-image: conic-gradient(#0cf 20deg, #0000  0deg 360deg);
-    border-radius: 50%;
-    margin: .25em;
-    margin-right: 1em;
-  }
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 <div id="da_game">
 
@@ -155,13 +7,15 @@
     <br><br>
     <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;">Genius</label>
     <input type="number" id="genius_level" disabled></input>
+    <progress id="genius_level_progress" max="1" value="0"></progress>
     <hr>
   </div>
 
   <div id="pane_feed">
 
     <div id="post_box">
-      <input id="post_input" type="text" value="">
+      <textarea id="post_input" type="text" value=""  disabled>
+      </textarea>
       <div id="post_box_bottom">
         <div id="post_pie"></div>
         <button disabled id="post_send" onclick="post_send()" >⌲</button>
@@ -171,114 +25,21 @@
     <hr>
 
     <div id="post_feed">
-    <p class="post"> What is up my Ridiculous Buddies? I can't have fun and I can't run; if you want to kiss me then we'll have some fun.</p> <p> What is up my Ridiculous Bitches </p>
-    <p class="post"> What is up my Ridiculous Buddies </p>
     </div>
 
   </div>
 
 </div>
 
+<template id="post_template">
+  <div class="post_container">
+    <p class="post_text">
+    </p>
+    <hr>
+    <div class="post_container_bottom">
+      ❤️ ♻️
+    </div>
+  </div>
+</template>
 
-<script>
-raw_posts = [
-  "First post",
-  "Second post",
-  "I am gay",
-  "That is cool",
-  "I love you",
-  "What an asshole",
-  "uwu"
-]
-target_post = raw_posts.shift();
-target_post_length = target_post.length;
-draft_post = "";
-
-function print_debug(header) {
-  console.log(header);
-  console.log(`
-  raw_posts: ${raw_posts.length} left;
-  target_post: ${target_post};
-  target_post_length: ${target_post_length};
-  draft_post: ${draft_post};
-  draft_post.length: ${draft_post.length};
-  `);
-  console.log(". . . . . . . . . . . . ");
-  console.log(`raw_posts: ${raw_posts}`);
-  console.log("========================");
-}
-
-function click_genius() {
-  var value = parseInt(document.getElementById('genius_level').value, 10);
-
-  if (value >= 10) {
-    // Try to type post
-    if (type_post()) {
-      // Post succesfully typed, reset genius level
-      value = 0
-    } else {
-      // Nah
-    }
-  } else {
-    // Increment value
-    value = (isNaN(value) ? 0 : value) + 1;
-  }
-
-  // Set value
-  document.getElementById('genius_level').value = value;
-
-}
-
-function type_post() {
-  print_debug("type_post()");
-  if (target_post.length > 0) {
-    // Still have posts to make!
-    draft_post = draft_post + target_post.slice(0, 1);
-    target_post = target_post.slice(1); 
-
-    set_post_input(draft_post);
-
-    set_post_pie_percent(100 * (draft_post.length / target_post_length))
-    return true;
-  }
-  else {
-    // Can't type; post is ready to go
-    return false;
-  }
-}
-function set_post_input(value) {
-  document.getElementById('post_input').value = value;
-  if (draft_post.length == target_post_length) {
-    document.getElementById('post_send').disabled = false;
-  }
-}
-
-function post_send() {
-  if (draft_post.length == target_post_length) {
-    target_post = raw_posts.shift();
-    target_post_length = target_post.length;
-    draft_post = "";
-    set_post_pie_percent(0);
-    set_post_input("");
-    // Re-disable post
-    document.getElementById('post_send').disabled = true;
-  }
-
-  print_debug("post_send()");
-
-  // todo - populate new post
-
-}
-
-function set_post_pie_percent(percent) {
-  post_pie = document.getElementById('post_pie');
-  degree = percent * 360.0 / 100 + 2;
-  color = (percent >= 100.0) ? "#2d4" : "#38d";
-  othercolor = (percent >= 100.0) ? "#2d4" : "#0000";
-  post_pie.style.backgroundImage =
-    `conic-gradient(${color} ${degree}deg, ${othercolor} ${degree}deg 360deg)`;
-}
-
-set_post_pie_percent(0);
-
-</script>
+<script src="script.js"></script>
