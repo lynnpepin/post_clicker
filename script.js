@@ -1,25 +1,18 @@
 raw_posts = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
   "hey",
   "i'm gay",
   "dude. look how hard i can cry",
   "?",
   "charging up my joe biden tulpa",
   "piss",
-  "I love you THIIIIS much! 🤏",
   "have all those years of playing runescape paid off yet",
   "ghosts are literally real",
   "posting is all i have in life",
-  "you gotta hand it to chasers,",
+  "I love you THIIIIS much! 🤏",
   "benjamin franklin would have loved \"MILF\"s as a concept. and also as a milfs",
-  "santa claus is a fascist",
+  "you gotta hand it to chasers,",
   "'i hate the french', i say, whitely,",
+  "santa claus is a fascist",
   "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
   "immortality rings stuck on penis help",
   "ex girlfriend charcuterie nightmare",
@@ -472,13 +465,13 @@ function update(dt) {
   
   // Increase followers: df/dt (total likes, reposts) toward population
   delta_followers(
-    Math.random() * Math.min(2**(-24) * sum_reposts * sum_likes * posted_posts.length, 1.0) // rate
+    Math.random() * Math.min(2**(-32) * sum_reposts * sum_likes * posted_posts.length, 2**(-16)) // rate
     * followers * (1 - followers / world_population)// logistic equation
     * dt / 1000
   )
 
   // Early game boost
-  if (followers <= 67) {
+  if (followers <= 67621) {
     if (posted_posts.length >= 6) {
       delta_followers(Math.random() * dt * posted_posts.length / 100_000);
     }
