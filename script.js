@@ -11,6 +11,8 @@ raw_posts = [
   "immortality rings stuck on penis help",
   "piss",
   "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
+  "what kind of catheter does iron man use",
+  "ex girlfriend charcuterie nightmare",
   "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
   "rejected with consolation 'plenty of fish in the sea'. dodged a bullet. you can't date fish idiot. maybe a dolphin? but even then its tenuous",
   "you gotta hand it to chasers,",
@@ -20,10 +22,9 @@ raw_posts = [
   "i ll start voting once they make a presidential medal of gaming",
   "exciting new kickstarter combines the modularity of a sectional sofa with the utility of a toilet",
   "google search free minecraft boobies no viruses",
-  "what kind of catheter does iron man use",
   "coming to the disappointing conclusions. and so forth",
   "goethe's faust is a wildly influential Bitch who did not know what colors were",
-  "my (f21) boyfriend (m38)'s algorithm keeps showing him ai videos of a baby being ripped apart by pit bulls. god i love him so much",
+  "my (f21) boyfriend (m38)'s algorithm keeps showing him ai videos of a baby being ripped apart by pit bulls. god. i love him so much",
   "why are you all surprised that i am smart and well read? is it my illiteracy",
   "fetishizing korean men in a way that is a little feminist and very racist",
   "to all the bots telling me 'i need psychological help' and 'i am full of shit'.. you sound like my next ex wife. dm me",
@@ -147,6 +148,7 @@ target_post = raw_posts.shift();
 target_post_length = target_post.length;
 draft_post = "";
 genius_max = 1;
+posted_posts = [];
 
 last = performance.now();
 now = performance.now();
@@ -156,7 +158,7 @@ delta = 0.125;
 function update(dt) {
   // dt in ms; around 125
   // console.log(dt); very close to 125
-  location.reload();
+  //location.reload();
 }
 
 setInterval(
@@ -168,9 +170,6 @@ setInterval(
   },
   125); // about every 125ms
 
-function update(dt){
-  //console.log(dt);
-}
 
 function print_debug(header) {
   console.log(header);
@@ -181,20 +180,24 @@ function print_debug(header) {
   draft_post: ${draft_post};
   draft_post.length: ${draft_post.length};
   `);
-  console.log(". . . . . . . . . . . . ");
-  console.log(`raw_posts: ${raw_posts}`);
   console.log("========================");
 }
 
+function decimal_from_id(id) {
+  var value = parseInt(document.getElementById(id).value, 10);
+  return isNaN(value) ? 0 : value;
+}
+
+//// Genius button
 function click_genius() {
-  var value = parseInt(document.getElementById('genius_level').value, 10);
+  var value = decimal_from_id('genius_level');
 
   if (value >= genius_max) {
     // Try to type post
     if (type_post()) {
       // Post succesfully typed, reset genius level
       value = 0
-      update_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 5 ? 1 : 0));
+      update_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 10 ? 1 : 0));
     } else {
       // Nah
     }
@@ -215,10 +218,12 @@ function click_genius() {
 function update_genius_max(new_max) {
   genius_max = new_max;
   document.getElementById('genius_level_progress').max = new_max;
+
 }
 
+/// Typing posts
 function type_post() {
-  print_debug("type_post()");
+  //print_debug("type_post()");
   if (target_post.length > 0) {
     // Still have posts to make!
     draft_post = draft_post + target_post.slice(0, 1);
@@ -246,12 +251,24 @@ function set_post_input(value) {
   }
 }
 
+function set_post_pie_percent(percent) {
+  post_pie = document.getElementById('post_pie');
+  degree = percent * 360.0 / 100 + 2;
+  color = (percent >= 100.0) ? "#2d4" : "#38d";
+  othercolor = (percent >= 100.0) ? "#2d4" : "#0000";
+  post_pie.style.backgroundImage =
+    `conic-gradient(${color} ${degree}deg, ${othercolor} ${degree}deg 360deg)`;
+}
+
+/// Creating new posts
 function post_send() {
   if (draft_post.length == target_post_length) {
-    // Post the post!
+    // Create the post!
     create_post(draft_post);
+    // Update ego
+    change_ego(1);
 
-    // Reset everything
+    // Reset the type box
     target_post = raw_posts.shift();
     target_post_length = target_post.length;
     draft_post = "";
@@ -262,11 +279,11 @@ function post_send() {
     // Re-set height
     const ta = document.getElementById('post_input');
     ta.style.height = 'auto';
-    update_genius_max( Math.floor(genius_max * 1.05) + (genius_max <= 100 ? 1 : 0) );
+    update_genius_max( Math.floor(genius_max * 1.005) + (genius_max <= 200 ? 5 : 0) );
     
   }
 
-  print_debug("post_send()");
+  //print_debug("post_send()");
 }
 
 function create_post(post_text) {
@@ -279,19 +296,16 @@ function create_post(post_text) {
 
   // Put everything together
   new_post.querySelector(".post_text").textContent = post_text;
-
   post_feed.prepend(new_post);
 
+  // Also add it to my posted_posts
+  posted_posts.push(new_post);
 }
 
+/// Ego
 
-function set_post_pie_percent(percent) {
-  post_pie = document.getElementById('post_pie');
-  degree = percent * 360.0 / 100 + 2;
-  color = (percent >= 100.0) ? "#2d4" : "#38d";
-  othercolor = (percent >= 100.0) ? "#2d4" : "#0000";
-  post_pie.style.backgroundImage =
-    `conic-gradient(${color} ${degree}deg, ${othercolor} ${degree}deg 360deg)`;
+function change_ego(delta_ego) {
+  document.getElementById('ego_level').value = decimal_from_id('ego_level') + delta_ego;
 }
 
 set_post_pie_percent(0);

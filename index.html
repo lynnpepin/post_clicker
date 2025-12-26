@@ -5,9 +5,19 @@
   <div id="pane_stats">
     <button id="genius_button" onclick="click_genius()" >🧠</button>
     <br><br>
-    <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;">Genius</label>
-    <input type="number" id="genius_level" disabled></input>
+    <div id="genius_container">
+      <div id="genius_row">
+        <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;">Genius</label>
+        <input type="number" id="genius_level" disabled></input>
+      </div>
     <progress id="genius_level_progress" max="1" value="0"></progress>
+    </div>
+    
+    <br>
+    <div id="ego_container">
+      <label style="font-size:.8em;letter-spacing:-0.05rem;font-weight:900;margin-left:.5em;">Ego</label>
+      <input type="number" id="ego_level" disabled></input>
+    </div>
     <hr>
   </div>
 
@@ -37,6 +47,7 @@
     </p>
     <hr>
     <div class="post_container_bottom">
+      <div class="post_container_likes">
       ❤️ ♻️
     </div>
   </div>
