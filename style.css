@@ -63,15 +63,17 @@ h1,h2,h3 {
   border-radius:3px;
   margin-right: 2em;
   text-align: right;
-  padding-right: -1em;
   color: #1f3;
   text-shadow: 0px 0px 1px #0f04;
   background-color: #132;
   font-family: monospace;
 }
+#genius_level_progress {
+  width: 8rem;
+}
 #ego_container {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 #ego_level {
@@ -84,9 +86,46 @@ h1,h2,h3 {
   text-shadow: 0px 0px 1px #00f8;
   background-color: #123;
   font-family: monospace;
+  margin-left: .75em;
 }
-#genius_level_progress {
-  width: 8rem;
+
+#followers_container {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#follower_level {
+  width:7.20em;
+  border: outset 1px;
+  border-radius:3px;
+  margin-right: 2em;
+  text-align: end;
+  color: #f8f;
+  text-shadow: 0px 0px 1px #8244;
+  background-color: #321;
+  font-family: monospace;
+  letter-spacing:-0.1em;
+  margin-left: .75em;
+}
+
+
+#population_container {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+#population_level {
+  width:7.20em;
+  border: outset 1px;
+  border-radius:3px;
+  margin-right: 2em;
+  text-align: end;
+  color: #f21;
+  text-shadow: 0px 0px 1px #8004;
+  background-color: #311;
+  font-family: monospace;
+  letter-spacing:-0.1em;
+  margin-left: .75em;
 }
 
 #pane_feed {
