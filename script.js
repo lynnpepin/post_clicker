@@ -1,45 +1,49 @@
 raw_posts = [
   "hey",
-  "i'm gay",
-  "dude. look how hard i can cry",
-  "?",
+  "dude look how hard i can cry",
   "charging up my joe biden tulpa",
-  "piss",
+  "ladies, ladies.\nplease.\nim sorry enough to go around",
+  "ex girlfriend charcuterie nightmare. i loved her.\n\n *sobs into my novelty clown handkerchief* i sell these handkerchiefs by the way \n\n*sobs*",
   "have all those years of playing runescape paid off yet",
-  "ghosts are literally real",
   "posting is all i have in life",
+  "ghosts are literally real",
   "I love you THIIIIS much! 🤏",
   "benjamin franklin would have loved \"MILF\"s as a concept. and also as a milfs",
   "you gotta hand it to chasers,",
   "'i hate the french', i say, whitely,",
+  "'i still have feelings for my ex girlfriend' i tell my therapist.\n\n'ok. you now have permission to kill yourself' he says",
   "santa claus is a fascist",
-  "as your therapist, i sympathize with you and i can understand why that is troubling. but on the other hand, that is some serious seinfeld shit",
   "immortality rings stuck on penis help",
-  "ex girlfriend charcuterie nightmare",
+  "as your therapist, i sympathize with you and i can understand why that is troubling.\n\non the other hand, that is some serious seinfeld shit",
   "what kind of catheter does iron man use",
-  "'cool quartz necklace, what is it for?' well, i bought it per the 'craigslist jackoff crystal guy', but a magical thing about quartz is its abundance and the piezoelectric effect giving it fantastic clock properties for  electric circuits. but mostly the jacking off",
+  "'cool quartz necklace, what is it for?'\n\nwell, i bought it per the 'craigslist jackoff crystal guy', but a magical thing about quartz is its abundance and the piezoelectric effect giving it fantastic clock properties for  electric circuits. but mostly the jacking off",
   "rejected with consolation 'plenty of fish in the sea'. dodged a bullet. you can't date fish idiot. maybe a dolphin? but even then its tenuous",
   "(animal crossing rover voice) Your skin is so lovely, what shade is that? Fascinating. And are you circumcised?",
   "my wife and kids left me behind at applebees after i challengd the waiter to an arm wrestle and completely lost my shit. again",
   "will you guys still love me if i make nice posts instead of gross posts",
   "i ll start voting once they make a presidential medal of gaming",
   "exciting new kickstarter combines the modularity of a sectional sofa with the utility of a toilet",
+  "my beautiful wife telling me about one guy one jar not realizing i am the Claudius to her Hamlet",
   "google search free minecraft boobies no viruses",
   "coming to the disappointing conclusions. and so forth",
   "goethe's faust is a wildly influential Bitch who did not know what colors were",
   "my (f21) boyfriend (m38)'s algorithm keeps showing him ai videos of a baby being ripped apart by pit bulls. god. i love him so much",
   "why are you all surprised that i am smart and well read? is it my illiteracy",
-  "fetishizing korean men in a way that is a little feminist and very racist",
+  "i am joining the battle for third spaces for youth on the side of. big truck",
+  "in 2015 it was #Feminist to fetishize korean men. now i know it is just racist",
+  "my main issue with \"my main issue with \"master chief fucks cortana\" is if you read the books you'd know the suit jacks him off\" is if you read the books you'd know they're catheterized and a prostate blaster would make more sense",
+  "a prostate blaster always makes sense",
   "behind every Foot is the venerable Toes.",
   "to all the bots telling me 'i need psychological help' and 'i am full of shit'.. you sound like my next ex wife. dm me",
   "making fun of kids is a human past time since time imemorial",
-  "can anyone recommend a good anime? no",
+  "can anyone recommend a good anime?\n\nnope",
   "i am some sort of delirious man bitch who is not even a man",
   "'Finally, FINALLY, an ACTUAL FIGHT WITH BOWSER. No Advancing Boss of Doom, no Get Back Here Boss, no Tennis Boss, just RUN UP, and PUNCH HIM IN HIS FACE. FINALLY' -- ThePoltergust5000 commenting on 'Super Mario Odyssey: Bowser Final Boss Fight and Ending'",
   "the down with cis bus skipped my fucking stop",
   "give me 'the chat gpt haircut'. i am ready to die",
   "tenga egg review: the desk ornament which will get you fired",
   "if luigi's mansione tried to shoot me i would have been impervious on account of my general qualities and attributes",
+  "woke is dead and we can now celebrate 'grandma got ran over by santa claus' like it's a good thing",
   "looking for: DICKs. status: TIGHT",
   "THE BITCH OF MATH aced another test",
   "pythagorean theorem? more like piss that gay ass precum.",
@@ -52,15 +56,18 @@ raw_posts = [
   "judith butler: collect the seven gender emeralds",
   "i am successful and usually sort of moist",
   "i independently arrived to the same idea as Dr. Seuss' book 'The Pocket Book of Boners' bitch",
+  "july 4th miracle? obliterated schoolcjhild with my truck as wide as a lane and as tall as a barn and nobody saw",
   "juice stand guy fucked the mango in front of me",
   "you let your toddler on the escalator all alone. but im the bad guy for going up the down escalator like a linebacker demolishing everything in my way?",
+  "the tenga jackoff device shredded my wiener into a fine paste",
   "bog standard family structures don't stand a chance against wildly incestuous ones",
   "centrist taking a side in the debate between 'you need to wipe' and 'you dont need to'",
   "how i make my very good posts (CW: mental illness, suicidal ideation, drug abuse, sleep paralysis, dissociative disorder, software opinions, childhood trauma)",
   "say what you will about elon musk, he did the impossible: get dril to sign up for Threads",
   "he's the only one posting on Threads. haha",
-  "i only hate the French because it lets me practice hatred for ethnic minorities in a manner Woke and becoming of of my Brand",
+  "you only hate the French because it lets you practice hating for minorities in a manner Woke and becoming of your Brand",
   "babe. i'm as circumcised as they get",
+  "beating and howling my chest. post office wont accept my tenga return",
   "goethe shaking his fists and rolling in his grave as SJWs decide not to use the Sonic the Hedgehog colors",
   "teacup? more like tea gallon. <-- british people probably",
   "\"sexism is when girls can't play baseball\", i say, tears rolling down my eyes. my lovely wife is allowed, but so bad. she can't. \"but my lovely wife is good enough to make up for me\" says my lovely wife (who is bad at baseball). \"we are baseball lesbians\"",
@@ -82,7 +89,10 @@ raw_posts = [
   "playing a sick guitar solo on the fron lawn with fireworks and everything. my children hate me and my wife is leaving me",
   "liberals want you to believe in IMAGINARY and IRRATIONAL NUMBERS now. this is 'new math'",
   "i am the true yaoi bara swordsman number 1",
+  "the marketplace for ideas. the public square for discourse. the communal stew of knowledge. the trough urinal of genius.",
+  "i am the punching bag of society. i will take your blows as a jesus like figure. and i will only moan a little bit",
   "a good cuck is not just dominant, but also has all the skills of a gameshow host. this property is associative",
+  "*tear falling down my eye* but i was told to be myself",
   "Oh ho ho, what is this? As someone who loves both lemons AND parties, I feel confident this 'click' on the 'world wide web' will be fruitful and joyous.",
   "'woah im tired' said yaoi bara swordsman number 1. 'let's have a snack and stop fighting'",
   "I've come to the realization that being silly is low effort. There are numerous ways to be silly, but only one way to be serious. For that reason, I will not be being silly any more. Please respect my decision at this time",
@@ -91,10 +101,12 @@ raw_posts = [
   "feeling bad about the current joe biden stuff",
   "choose ur gender: *one of two identical skeletons*",
   "to whoever said i wouldn't make it: look at my follower count. you were right",
+  "FIVE YEAR OLD NEPHEW: if a car was about to run me over i would jump over it\nTHIRTY YEAR OLD ME: that's exactly rigth. me too",
   "you can :3 if you want to. you can leave your :o behind. cause your friends don't ',;) and if they don't ,';) then they're no friends of mine",
   "taking the world by storm: coffee enemas",
   "i'm not just 'good at posting'. babe. im the 'postmaster general'",
   "I was in a rubber suit and I had rubber nipples. I could have played Batman straight, but I made him gay. Is Batman gay? No, but I made him gay",
+  "unattended dogs at costco so i fed it one of the hams",
   "you've merried your last xbox christmas",
   "there's a one in a billion chance that every time you used a fleshlight there's a chance your dick will be ground up and put into a patty to grill",
   "stakeholders are scared of the new 'halloween all year' direction we are taking",
@@ -102,19 +114,29 @@ raw_posts = [
   "romanticizing feet in a god-honoring way",
   "Biden Claimed His Uncle Was Eaten by Cannibals. Military Records Say Otherwise",
   "congratulations to the \"death to america\" crowd for winning the war on america",
+  "my 'five steps to wiping better' book isn't a joke. please be clear this is not a joke",
   "times are so tight that i am now only tipping 15% to my landlord",
   "i like my women like i like my coffee. i like coffee",
+  "romanticizing feet. romanticizing piss. romanticizing something familiar which beckons to a bygone era. romanticizing butt holes",
+  "i used chatgpt to create a clone of my son, when he was cuter and i loved him more",
   "my religious beliefs is. that the halo games are real and going to happen",
+  "WARREN, Ohio – The vice president strode into a local restaurant here with a message for the Greek-Americans enjoying their lunch: \"I'm Joe Bidenopoulos.\"",
+  "that last one was real",
+  "sobbing to myself as they administer the lethal injection: i'm joe bidenopoulos...",
   "pokemon go. pokemon sleep. pokemon smile. you sultry bitches thought i'd say pokemon piss, cum, shit? what about pokemon sob. pokemon bleed. what about that",
   "\"try not to cum challenge\". buddy. that's not a challenge. that's the story of my life",
   "neither of them could hear the tiny, tinny screaming from the tomato. it is neither a fruit nor a vegetable. in yaoi bara swordsman world, fruits are alive",
   "guinea pigs are the sillyiest little guys. except for me",
+  "ROKO: imagine a snake so scary. now. imagine a scarier snake than that\n\nELIEZER YUDOWSKY: fuck. shut up. that scared me.",
   "chao garden from Sonic Adventure 2 Battle reminded me of my childhood. because of the neglect and physical abuse",
   "silly liberal. god gave us only twenty-seven genders: female, alpha male, beta male, gamma male,",
+  "call me an american the way i need some high speed rail",
   "you're allowed to have a grimoire of curses, etc. even if your breasts are small",
   "twitter dot com is the same thing as hitler youth and im not joking",
   "(reviewing jack off device) every part has the purpose of obliteration, maceration, destruction, etc.",
+  "🏳️‍⚧️\n\nwhat country is this and why are the women from there hate me. so much",
   "i, for one, am excited for Obama to take me FEMA camping",
+  "tragic misunderstanding of what 'BJs whole sale' meant",
   "i asked chatgpt for the 100 days of christmas. what happened next made me shake, shit, cum, and so forth",
   "Peeled grapes? Wet spaghetti? Who cares? Give your family a Halloween to remember with Horsebrook Farms AUTHENTIC 'Entrails and Viscera' Halloween experience kit!",
   "i'm not 'jacking off' im 'cultivating pleasure'. and babe. you're a scarecrow",
@@ -123,7 +145,6 @@ raw_posts = [
   "i step into my jesus slippers (to remind myself that Hᴇ is always beneath me) and i put on my satan cap (to remind myself that satan is my lord)",
   "i can say that because im gay",
   "annointed the Commune Crown and reluctantly must embrace the title of Landlord",
-  "ladies. im gay",
   "god. it hurts",
   "i believe in myself, despite my complete and total lack of a foot fetish",
   "this account has been brought to you by Mariah Menunounos",
@@ -134,6 +155,7 @@ raw_posts = [
   "just got my bechdel test back. it's positive",
   "incel: wants to fuck, doesn't. volcel: doesn't want to fuck, doesn't. me? well. let's just say. :(",
   "import numpy as SHIT. import sympy as GARBAGE",
+  "if the zombie apocalypse happened i would just make sure htey're all circumsized",
   "https://en.wikipedia.org/wiki/Evil_number",
   "THANK YOU feminism for not killing games",
   "is my childhood trauma really that funny to you",
@@ -189,7 +211,7 @@ setInterval(
   30
 );
 
-
+//// Utility
 function print_debug(header) {
   console.log(header);
   console.log(`
@@ -213,14 +235,19 @@ function click_genius() {
 }
 
 
-/// Typing posts
+//// Typing posts
 function type_post() {
   //print_debug("type_post()");
   if (target_post.length > 0) {
     document.getElementById("post_box").style.opacity = "1";
     // Still have post to type!
-    draft_post = draft_post + target_post.slice(0, 1);
-    target_post = target_post.slice(1); 
+    // todo - skip space, newline
+    var next_char = "";
+    do {
+      next_char = target_post.slice(0, 1);
+      draft_post = draft_post + next_char;
+      target_post = target_post.slice(1); 
+    } while ([' ','\n'].includes(next_char));
 
     set_post_input(draft_post);
 
@@ -230,7 +257,7 @@ function type_post() {
     const ta = document.getElementById('post_input');
     ta.style.height = ta.scrollHeight + 'px';
 
-    set_genius_max(Math.floor(genius_max * 1.001) + (genius_max <= 10 ? 1 : 0));
+    set_genius_max(genius_max * 1.001 + (genius_max <= 10 ? 1 : 0));
     return true;
   }
   else {
@@ -255,7 +282,7 @@ function set_post_pie_percent(percent) {
     `conic-gradient(${color} ${degree}deg, ${othercolor} ${degree}deg 360deg)`;
 }
 
-/// Creating new posts
+//// Creating new posts
 function post_send() {
   if (draft_post.length == target_post_length) {
     // Create the post!
@@ -274,7 +301,7 @@ function post_send() {
     // Re-set height
     const ta = document.getElementById('post_input');
     ta.style.height = 'auto';
-    set_genius_max( Math.floor(genius_max * 1.001) + (genius_max <= 1000 ? 5 : 0) );
+    set_genius_max( genius_max * 1.01 + (genius_max <= 100 ? 1 : 0) );
     
     // Slowly reveal elements
     if (posted_posts.length == 4) {
@@ -316,7 +343,7 @@ function create_post(post_text) {
 
 /// Genius
 function delta_genius(by_value) {
-  if (genius_value >= genius_max) {
+  if (genius_value >= Math.floor(genius_max)) {
     set_genius(genius_max);
     // Try to type post
     if (type_post()) {
@@ -340,7 +367,8 @@ function set_genius(to_value) {
 
 function set_genius_max(new_max) {
   genius_max = new_max;
-  document.getElementById('genius_level_progress').max = new_max;
+  // used to do some stuff with it here. might still
+  document.getElementById('genius_level_progress').max = Math.floor(new_max);
 }
 
 function delta_genius_per_click(dgpc) {
@@ -453,15 +481,11 @@ function update(dt) {
   }
 
   // Increase genius by ego
-  delta_genius(
-    ego_value * dt / 1000
-  );
+  delta_genius(ego_value * dt / 1000);
 
 
   // Increase ego as function of current followers
-  delta_ego(
-    followers * dt / 1000_000
-  );
+  delta_ego(followers * dt / 1000_000_000);
   
   // Increase followers: df/dt (total likes, reposts) toward population
   delta_followers(
@@ -472,7 +496,7 @@ function update(dt) {
 
   // Early game boost
   if (followers <= 67621) {
-    if (posted_posts.length >= 6) {
+    if (posted_posts.length >= 4) {
       delta_followers(Math.random() * dt * posted_posts.length / 100_000);
     }
   }
